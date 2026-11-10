@@ -2,7 +2,10 @@
  * File: signal_sigaction.c
  * Modified by: Blake Ackland
  * 
- * Brief summary of program:
+ * Brief summary of program: Waits in an infinite loop for a SIGUSR1
+                             signal and when SIGUSR1 signal is received,
+                            the program prints PID of process and ends.
+ * Use 'kill -10 <pid>' to send SIGUSR1
  */
 
 #include <signal.h>
@@ -12,12 +15,14 @@
  
 void handle_signal(int sig) {
     printf("PID: %d\n", getpid());
+    exit(1);
 }
 
 int main() {
+    //sigaction struct
     struct sigaction sa = {
-        .sa_handler = handle_signal,    // no additional blocked signals
-        .sa_flags = 0,                  // default behavior
+        .sa_handler = handle_signal,
+        .sa_flags = 0
     };
 
     if (sigaction(SIGUSR1, &sa, NULL) < 0) {
