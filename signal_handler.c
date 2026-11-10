@@ -7,8 +7,8 @@
  * Modified by: Blake Ackland
  * 
  * Brief summary of modifications:
-        added "(void)sig" to pass correct parameters to signal()
         removed exit(1) from handle_signal
+        SIGINT is now futile. Must use 'kill -9 <pid>' to kill
  */
 
 
@@ -21,7 +21,6 @@
  * @brief Signal handler for SIGINT - prints a message and exits
  */
 void handle_signal(int sig) {
-    (void)sig;
     printf("Received a signal\n");
 }
 

@@ -2,7 +2,9 @@
  * File: signal_alarm.c
  * Modified by: Blake Ackland
  * 
- * Brief summary of program:
+ * Brief summary of program: This program has an alarm scheduled
+                            to be sent after 5 seconds. When the alarm goes
+                            off, the program tells the user.
  */
  #include <signal.h>
  #include <unistd.h>
@@ -10,7 +12,6 @@
  #include <stdio.h>
 
 void handle_signal(int sig) {
-    (void)sig;
     printf("Alarm!!\n");
     exit(1);
 }

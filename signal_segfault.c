@@ -8,6 +8,7 @@
  * 
  * Brief summary of modifications: 
             added handle_segfault method
+            added signal() function to top to catch segfault
 
  */
 
@@ -18,7 +19,6 @@
 
 void handle_segfault(int sig)
 {
-    (void)sig;
     printf("Seg fault handled\n");
 }
 
