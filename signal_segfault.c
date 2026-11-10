@@ -4,15 +4,28 @@
  */
 
 /**
- * Modified by:
+ * Modified by: Blake Ackland
  * 
- * Brief summary of modifications:
+ * Brief summary of modifications: 
+            added handle_segfault method
+
  */
 
+ #include <signal.h>
+ #include <unistd.h>
+ #include <stdlib.h>
+ #include <stdio.h>
 
-#include <stdio.h>
+void handle_segfault(int sig)
+{
+    (void)sig;
+    printf("Seg fault handled\n");
+}
 
 int main (int argc, char* argv[]) {
+
+    signal(SIGSEGV, handle_segfault);
+
     // Declare a null pointer
     int* i = NULL;
 
