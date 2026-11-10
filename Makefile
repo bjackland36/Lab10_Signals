@@ -1,4 +1,3 @@
-
 CC=gcc
 CFLAGS=-c -g -Wall -Werror
 
