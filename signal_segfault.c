@@ -4,7 +4,8 @@
  */
 
 /**
- * Modified by: Blake Ackland
+* Assignment: Lab10 - Signals
+* Modified by: Blake Ackland - section 131 
  * 
  * Brief summary of modifications: 
             added handle_segfault method

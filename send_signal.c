@@ -1,8 +1,11 @@
 /**
  * File: send_signal.c
- * Modified by: Blake Ackland
+ * Assignment: Lab10 - Signals
+ * Modified by: Blake Ackland - section 131 
  * 
- * Brief summary of program:
+ * Brief summary of program: This program sends the sigusr1 signal
+                             with a random integer (sigval_int)
+                             to recv_signal based on its pid
  */
  #include <signal.h>
  #include <unistd.h>

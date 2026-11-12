@@ -1,13 +1,13 @@
 /**
  * File: signal_sigaction.c
- * Modified by: Blake Ackland
+ * Assignment: Lab10 - Signals
+ * Modified by: Blake Ackland - section 131 
  * 
  * Brief summary of program: Waits in an infinite loop for a SIGUSR1
                              signal and when SIGUSR1 signal is received,
                             the program prints PID of process and ends.
  * Use 'kill -10 <pid>' to send SIGUSR1
- */
-
+ */ 
 #include <signal.h>
 #include <unistd.h>
 #include <stdlib.h>

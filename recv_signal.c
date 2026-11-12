@@ -1,10 +1,13 @@
 /**
  * File: recv_signal.c
- * Modified by: Blake Ackland
+ * Assignment: Lab10 - Signals
+ * Modified by: Blake Ackland - section 131 
  * 
- * Brief summary of program:
+ * Brief summary of program: This program waits in an infinite
+                             loop for a sigusr1 signal and when
+                             the signal is recieved it prints
+                             sigval_int and exits.
  */
-
  #include <signal.h>
  #include <unistd.h>
  #include <stdlib.h>

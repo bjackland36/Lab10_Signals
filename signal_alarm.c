@@ -1,6 +1,7 @@
 /**
  * File: signal_alarm.c
- * Modified by: Blake Ackland
+ * Assignment: Lab10 - Signals
+ * Modified by: Blake Ackland - section 131  
  * 
  * Brief summary of program: This program has an alarm scheduled
                             to be sent after 5 seconds. When the alarm goes

@@ -4,7 +4,8 @@
  */
 
 /**
- * Modified by: Blake Ackland
+* Assignment: Lab10 - Signals
+* Modified by: Blake Ackland - section 131 
  * 
  * Brief summary of modifications:
         removed exit(1) from handle_signal
