@@ -22,7 +22,7 @@
  * @brief Signal handler for SIGINT - prints a message and exits
  */
 void handle_signal(int sig) {
-    printf("Received a signal\n");
+    printf("\nReceived a signal\n");
 }
 
 int main() {

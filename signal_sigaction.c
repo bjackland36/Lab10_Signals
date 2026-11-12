@@ -13,16 +13,16 @@
 #include <stdlib.h>
 #include <stdio.h>
  
-void handle_signal(int sig) {
-    printf("PID: %d\n", getpid());
+void handle_signal(int sig, siginfo_t *info, void *context) {
+    printf("PID of sender: %d\n", info->si_pid);
     exit(1);
 }
 
 int main() {
     //sigaction struct
     struct sigaction sa = {
-        .sa_handler = handle_signal,
-        .sa_flags = 0
+        .sa_sigaction = handle_signal,
+        .sa_flags = SA_SIGINFO
     };
 
     if (sigaction(SIGUSR1, &sa, NULL) < 0) {
