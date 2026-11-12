@@ -24,8 +24,8 @@
          .sa_sigaction = handle_signal,
          .sa_flags = SA_SIGINFO
      };
- 
-     sigemptyset(&sa.sa_mask);
+
+     printf("PID of this program: %d\n", getpid());
      if (sigaction(SIGUSR1, &sa, NULL) < 0) {
          perror("sigaction");
          exit(1);
