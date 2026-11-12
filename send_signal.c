@@ -8,18 +8,22 @@
  #include <unistd.h>
  #include <stdlib.h>
  #include <stdio.h>
+ #include <time.h>
 
 int main(int argc, char *argv[])
 {
-    if (argc != 3) {
-        fprintf(stderr, "Error: use form '%s <pid> <int value>'\n", argv[0]);
+    if (argc != 2) {
+        fprintf(stderr, "Error: use form '%s <pid>'\n", argv[0]);
         return 1;
     }
 
     pid_t pid = (pid_t)atoi(argv[1]);
+    srand(time(NULL));
 
     union sigval value;
-    value.sival_int = atoi(argv[2]);
+    value.sival_int = rand();
+
+    printf("Random number: %d\n", value.sival_int);
 
     if (sigqueue(pid, SIGUSR1, value) < 0) {
         perror("sigqueue");
